@@ -2,6 +2,7 @@ import React, { createContext, useState } from 'react';
 import { Box } from '@chakra-ui/react';
 
 import Board from './Board';
+import Details from './Details';
 
 export const GameContext = createContext({
 	user: '',
@@ -13,7 +14,8 @@ export default function Main() {
 	const value = { user, setUser };
 	return (
 		<GameContext.Provider value={value}>
-			<Box>
+			<Box d="flex" flexDir="column" justifyContent="center" alignItems="center">
+				<Details />
 				<Board />
 			</Box>
 		</GameContext.Provider>
