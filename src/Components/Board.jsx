@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Box, Text, Grid, GridItem, Button, border } from '@chakra-ui/react';
+import { Box, Text, Grid, GridItem, Button } from '@chakra-ui/react';
 
 import { GameContext } from './Main';
 
