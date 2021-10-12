@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Box, Text, Grid, GridItem, Button } from '@chakra-ui/react';
+import { Box, Text, Grid, GridItem, Button, border } from '@chakra-ui/react';
 
 import { GameContext } from './Main';
 
@@ -31,6 +31,10 @@ export default function Board() {
 				setWinner(user);
 				return true;
 			}
+		}
+
+		if (!winner && !board.includes(undefined)) {
+			setWinner('No one');
 		}
 		return false;
 	};
@@ -98,7 +102,7 @@ export default function Board() {
 					{user} Turn!
 				</Text>
 				<Text color="gray" fontSize="4xl">
-					{winner ? `Winner is ${winner}` : 'Game in progress'}
+					{winner ? `${winner} won the game` : 'Game in progress...'}
 				</Text>
 				<Reset />
 			</Box>
